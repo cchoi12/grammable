@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'fog'
+gem 'figaro'
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 gem 'devise'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'

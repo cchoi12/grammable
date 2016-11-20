@@ -153,11 +153,15 @@ RSpec.describe GramsController, type: :controller do
       expect(response).to redirect_to new_user_session_path
     end
 
-    it "should successfully create a gram in our DB" do
+    it "should successfully create a new gram in our DB" do
       user = FactoryGirl.create(:user)
       sign_in user
 
-      post :create, gram: {message: 'Hello!'}
+      post :create, gram: {
+        message: 'Hello!',
+        picture: fixture_file_upload("/picture.png", 'image/png')
+      }
+
       expect(response).to redirect_to root_path
 
       gram = Gram.last

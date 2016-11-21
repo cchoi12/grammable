@@ -1,1 +1,6 @@
 <%= @gram.inspect %>
+
+<%= simple_form_for @comment, url: gram_comments_path(@gram) do |f| %>
+  <%= f.input :message %>
+  <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+<% end %>
